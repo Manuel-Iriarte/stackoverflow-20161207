@@ -1,0 +1,25 @@
+﻿@model WebApplication2.Models.CallMe
+
+
+@Html.AntiForgeryToken()
+<div class="row">
+    <div id="result" class="margin-bottom-5">
+
+
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Navn" } })
+        </div>
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control", @placeholder = "Telefon" } })
+        </div>
+        <div class="col-md-12">
+            @Html.TextAreaFor(model => model.CallMeMessage, new { @class = "form-control", @placeholder = "Besked", @cols = 80, @rows = 7 })
+        </div>
+        <div class="col-md-12">
+            @Html.ValidationMessageFor(model => model.Name, string.Empty, new { @class = "field-validation-error" })
+            @Html.ValidationMessageFor(model => model.Phone, string.Empty, new { @class = "field-validation-error" })
+            @Html.ValidationMessageFor(model => model.CallMeMessage, string.Empty, new { @class = "field-validation-error" })
+        </div>
+
+    </div>
+</div>
